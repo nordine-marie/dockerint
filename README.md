@@ -1,3 +1,3 @@
 # DockerINT
-dev : development folder
-rep : reports folder
+dev : development folder  
+rep : reports folder  
