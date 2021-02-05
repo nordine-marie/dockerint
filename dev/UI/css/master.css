@@ -1,0 +1,131 @@
+/* Fonts */
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/Rubik/Rubik-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-weight: bold;
+  src: url('fonts/Rubik/Rubik-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  src: url('fonts/Rubik/Rubik-Italic.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: oblique;
+  src: url('fonts/Rubik/Rubik-Light.ttf');
+}
+
+/* MAIN */
+
+* {
+  font-family: Rubik ;
+  font-weight: 500;
+}
+
+body {
+  text-align: center;
+}
+
+div.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+img.main_logo {
+  width: 20%;
+}
+
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #1794f0;
+}
+
+
+input.search {
+  height : 30px;
+  width : 50% ;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+span.button {
+  padding : 10px;
+  background-color: blue ;
+  color: white ;
+  border-radius : 5px;
+}
+
+div.cologos > img {
+  width: 150px;
+  height: auto ;
+  position: fixed ;
+  bottom : 10px ;
+  right : 10px ;
+}
+
+
+
+div.results {
+  display: flex;
+  flex-direction: column ;
+  width: 50% ;
+  margin: 0;
+
+}
+
+div.aresult {
+  background-color: #1794f0;
+  margin : 10px 0 10px 0;
+  border-radius: 5px;
+  text-align: left ;
+  padding: 20px;
+  color : white ;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+div.aresult:hover {
+    border: 10px solid #1794f0;
+}
+
+div.aresult > h3 {
+  margin-top: 0 ;
+  font-weight: bold ;
+}
+
+div.aresult > p {
+  margin-bottom: 0 ;
+  font-size: 13px;
+}
+
+
+
+
+
+/*--END--*/
