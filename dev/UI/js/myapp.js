@@ -19,6 +19,11 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
        templateUrl: 'settings/settings.html'
     })
 
+    .state('login', {
+       url: '/login',
+       templateUrl: 'login/login.html'
+    })
+
 
 
     $urlRouterProvider.otherwise('dashboard');
@@ -29,6 +34,9 @@ myApp.controller('GlobalController', ["$scope", "$state", "$timeout", "$window",
 
   function($scope, $state, $timeout, $window) {
     console.log("Global") ;
+    $scope.displayheader = true;
+    console.log($scope.state) ;
+
     $scope.gotoDashboard = function() {
       $state.go('dashboard')
     } ;
@@ -38,5 +46,15 @@ myApp.controller('GlobalController', ["$scope", "$state", "$timeout", "$window",
     $scope.gotoSearch = function() {
       $state.go('search')
     } ;
-  }
+    $scope.currState = $state ;
+    $scope.$watch('currState.current.name', function(newValue, oldValue) {
+      $scope.currStateName = newValue;
+      console.log("went to " + $scope.currStateName) ;
+      if( newValue == 'login') {
+        $scope.displayheader = false;
+      }
+      else {
+        $scope.displayheader = true;
+      }
+  }) ; }
 ]);

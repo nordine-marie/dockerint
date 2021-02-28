@@ -20,6 +20,8 @@
   <script src="dashboard/dashboard.js"></script>
   <script src="search/search.js"></script>
   <script src="settings/settings.js"></script>
+  <script src="login/login.js"></script>
+
 
 
 </head>
@@ -28,7 +30,7 @@
 <body ng-app="myApp" id='bodyapp' ng-controller="GlobalController">
 
 
-  <nav>
+  <nav ng-if="displayheader">
     <div class="navlinks">
       <div style="width: 15%; margin-left: 30px; margin-top: 2px;">
         <a href="./" class="main_logo"><img class="main_logo hvr-grow" src="./assets/logo_dockerint.png" alt="DockerINT"></a>
