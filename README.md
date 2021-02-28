@@ -2,10 +2,10 @@
 dev : development folder  
 rep : reports folder  
 
-# User Interface (Front End)
-Made with :
+# User Interface (Front End)  
+Made with :  
 HTML, CSS, JavaScript, AngularJS  
 Vues :  
-  dashboard
-  search
-  settings
+  dashboard  
+  search  
+  settings  
