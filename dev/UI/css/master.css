@@ -24,9 +24,47 @@
 
 /* MAIN */
 
+main {
+  margin-top: 13%;
+}
+
 * {
   font-family: Rubik ;
   font-weight: 500;
+}
+
+nav {
+ position: fixed ;
+ top : 0px;
+ left: 0px;
+ height: 12%;
+ width: 100%;
+ background-color: #ededed;
+ box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+ z-index: 10;
+
+
+}
+
+div.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+div.sublinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.sublinks > span {
+  color : #424242;
+  font-size: 30px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
 body {
@@ -37,12 +75,17 @@ div.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 18%;
+  width: 100%;
 
 }
 
 img.main_logo {
-  width: 20%;
+  width: 100%
 }
+
+
 
 input[type=text], textarea {
   -webkit-transition: all 0.30s ease-in-out;
@@ -87,6 +130,11 @@ div.cologos > img {
   right : 10px ;
 }
 
+div.github {
+  position: fixed;
+  bottom: 10px;
+  left: 15px;
+}
 
 
 div.results {
@@ -123,6 +171,7 @@ div.aresult > p {
   margin-bottom: 0 ;
   font-size: 13px;
 }
+
 
 
 

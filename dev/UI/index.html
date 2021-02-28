@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=fr" dir="ltr">
+<html lang="fr" dir="ltr">
 
 <head>
   <meta charset="utf-8">
@@ -8,51 +8,53 @@
   <link rel="stylesheet" href="./css/hover-min.css">
   <link rel="stylesheet" href="./css/font-awesome-4.5.0/css/font-awesome.min.css">
   <link rel="icon" href="./assets/ico.png">
+
+  <!---- JS Libs ------>
+
+  <script src="jslibs/angular.min.js"></script>
+  <script src="jslibs/angular-ui-router.min.js"></script>
+
+  <!---- JS Scripts ------>
+
+  <script src="js/myapp.js"></script>
+  <script src="dashboard/dashboard.js"></script>
+  <script src="search/search.js"></script>
+  <script src="settings/settings.js"></script>
+
+
 </head>
 
-<body>
 
-  <div class="cologos"><img src="./assets/cologos" alt="cologos"></div>
+<body ng-app="myApp" id='bodyapp' ng-controller="GlobalController">
 
 
-  <h1>
-    <a href="./"><img class="main_logo" src="./assets/logo_dockerint.png" alt="DockerINT"></a>
-  </h1>
-  <div class="main">
-    <input class="search" type="text" placeholder="Recherche un conteneur sur DockerINT">
-    <div class="results">
-      <div class="aresult">
-        <h3>container 1</h3>
-        <p> a quick resume of container 1</p>
-
+  <nav>
+    <div class="navlinks">
+      <div style="width: 15%; margin-left: 30px; margin-top: 2px;">
+        <a href="./" class="main_logo"><img class="main_logo hvr-grow" src="./assets/logo_dockerint.png" alt="DockerINT"></a>
       </div>
-      <div class="aresult">
-        <h3>container 1</h3>
-        <p> a quick resume of container 1</p>
-
-      </div>
-      <div class="aresult">
-        <h3>container 1</h3>
-        <p> a quick resume of container 1</p>
-
-      </div>
-      <div class="aresult">
-        <h3>container 1</h3>
-        <p> a quick resume of container 1</p>
-
-      </div>
-      <div class="aresult">
-        <h3>container 1</h3>
-        <p> a quick resume of container 1</p>
-
+      <div class="sublinks">
+        <span ng-click="gotoDashboard()"><i class="fa fa-server"></i> Tableau de bord</span>
+        <span ng-click="gotoSearch()"><i class="fa fa-search"></i> Rechercher</span>
+        <span ng-click="gotoSettings()"><i class="fa fa-gear"></i></span>
       </div>
     </div>
-  </div>
+  </nav>
 
 
 
+  <div class="cologos"><img src="./assets/cologos.png" alt="cologos"></div>
+  <div class="github hvr-bob"><a href="https://github.com/nordine-marie/dockerint"><i class="fa fa-github fa-3x"></i></a></div>
 
-  <script src="./main.js" charset="utf-8"></script>
+
+  <ui-view>
+
+    <!-----------////PLACEHOLDER\\\\---------->
+
+  </ui-view>
+
 </body>
+
+
 
 </html>
