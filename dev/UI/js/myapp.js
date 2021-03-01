@@ -24,9 +24,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
        templateUrl: 'login/login.html'
     })
 
-
-
-    $urlRouterProvider.otherwise('dashboard');
+    $urlRouterProvider.otherwise('login');
 
 });
 
