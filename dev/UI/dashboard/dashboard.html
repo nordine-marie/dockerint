@@ -1,13 +1,27 @@
 <div class="dashboard" ng-controller="DashboardController">
-  <h1><i class="fa fa-server"></i> Dashboard</h1>
+  <h1><i class="fa fa-server"></i> Tableau de bord</h1>
   <div class='tasks'>
-    <div class="box" style="margin-right:30px;">
-      <h2>Taches en cours</h2>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo id delectus neque eligendi in, nobis suscipit esse, reprehenderit doloremque iste vero aspernatur. Vitae optio dolorum, vero, illum asperiores aperiam corporis.
+    <div class="box" style="margin-right:30px; width: 100%;">
+      <h2>Tâches en cours</h2>
+      <div>
+        <div class="atask">
+          <div class="ataskheader"><span class="ataskname">Task name</span><span class="ataskdate"> lancée le DDMMYYYY à HH:MM</span></div>
+          <div class="progress" style="width : 100%">
+            <div class="progress-done" data-done="70">
+              <span style="color: #1794f0;">70%</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="box">
-      <h2>Taches terminées</h2>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi modi, cumque enim eius. Repellat dolore voluptatem adipisci quis facere, officiis esse, saepe voluptates voluptate corporis nulla asperiores repudiandae soluta obcaecati!
+    <div class="box" style=" width: 100%;">
+      <h2>Tâches terminées</h2>
+      <div>
+        <div class="atask">
+          <div class="ataskheader"><span class="ataskname">Task name</span><span class="ataskdate"> lancée le DDMMYYYY à HH:MM</span></div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
