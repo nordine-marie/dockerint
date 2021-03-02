@@ -15,6 +15,11 @@
 7. Nettoyer système 
 8. Créer sa propre image
 9. Créer DockerFile
+   * Dockerfile
+   * Git
+   * Construire
+10. Créer image DockerHub
+11. Docker compose
 
 ## Avantage de Docker et description
 Le plus : code fonctionne partout, n'isole que ressources nécessaires, démarrage rapide, développement plus autonome, réduites cout, augmente densité de l'infrastructure et améliore cycle déploiement.
@@ -40,7 +45,7 @@ docker stop ID_RUN
 ### Supprimer
 docker rm ID_RUN
 
-## Container
+## Serveur Nginx
 Docker fun -d -p(utilisation des ports) 8080:80 ngix 
 En allant sur http://127.0.0.1.8080 page défaut de nginx
 
@@ -62,8 +67,9 @@ docker system prune
 ## Créer Docker file
 Dossier ds lequel la recette décrivant l'image dont on a besoin sera écrite avec les diverses dépendances 
 Une instruction = un layer = une étape construction de l'image
-Créer fichier "Dockerfile" 
 
+### Dockerfile
+Créer fichier "Dockerfile" 
 FROM debian:9						//Modèle, Image de base
 RUN apt-get update -yq \
 && apt-get install curl gnupg -yq \
@@ -77,16 +83,23 @@ EXPOSE 2368  						//indique port
 VOLUME /app/logs    		//indique fichier à partager
 CMD npm run start				//commande executer démarrage
 
-Pour git:
+### Git
 Créer fichier .dockerignore à côté Dockerfile avec
-
 node_modules
 .git
 
-La créer:
-docker build -t ocr-docker-build . //. car Dockerfile à la racine
-docker run -d -p 2368:2368 ocr-docker-build //accessible http://127.0.0.1:2368
+### Construire
+docker build -t ocr-docker-build .           //. car Dockerfile à la racine
+docker run -d -p 2368:2368 ocr-docker-build  //accessible http://127.0.0.1:2368
 
-## Docker compose: 
+## Créer image DockerHub
+Aller sur  https://hub.docker.com/ et se co
+Create Repository saisir nom+description
+
+docker tag nom:latest ocr/nom:latest                // créer un lien
+ou ➜ docker tag id_du_conteneur lieu/nom:latest    //l'id se  trouver avec docker build
+docker push YOUR_USERNAME/nom:latest                //envoyer
+
+## Docker compose
 --> gestion infrastructure, déployer ensemble composant dans conteneurs 
 Installation sur Linux sinon inclus 
