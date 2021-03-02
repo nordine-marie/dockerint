@@ -46,7 +46,10 @@ docker stop ID_RUN
 docker rm ID_RUN
 
 ## Serveur Nginx
-Docker fun -d -p(utilisation des ports) 8080:80 ngix 
+
+```
+docker run -d -p 8080:80 nginx # -p : utilisation des ports
+```
 En allant sur http://127.0.0.1.8080 page défaut de nginx
 
 ## Récupérer une image sans la lancer 
