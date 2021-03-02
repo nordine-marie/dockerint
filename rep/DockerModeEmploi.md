@@ -103,3 +103,47 @@ docker push YOUR_USERNAME/nom:latest                //envoyer
 ## Docker compose
 --> gestion infrastructure, déployer ensemble composant dans conteneurs 
 Installation sur Linux sinon inclus 
+
+### Utiliser stack docker compose
+docker-compose up -d vous permettra de démarrer l'ensemble des conteneurs en arrière-plan ;
+docker-compose ps vous permettra de voir le status de l'ensemble de votre stack ;
+docker-compose logs -f --tail 5 vous permettra d'afficher les logs de votre stack ;
+docker-compose stop vous permettra d'arrêter l'ensemble des services d'une stack ;
+docker-compose down vous permettra de détruire l'ensemble des ressources d'une stack ;
+docker-compose config vous permettra de valider la syntaxe de votre fichier docker-compose.yml.
+
+### Créer docker-compose.yml
+Dedans exemple-->
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
+volumes:
+  db_data: {}
+  
+Lancer:
+docker-compose up -d
+Résutat:
+http://127.0.0.1:8000
