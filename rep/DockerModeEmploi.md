@@ -34,17 +34,25 @@ Docker Hub : équivalent de github stock image
 
 ## Container
 ### Lancer
-docker run nom *(-d ou --detach si besoin multiple ou garder allumer jusqu'à fin service)*
+```
+docker run nom 
+```
+*(-d ou --detach si besoin multiple ou garder allumer jusqu'à fin service)*
 Docker cherche si "nom" dispo en local sinon sur registry Docker
 ### Rentrer dedans
+```
 docker exec -ti ID_RUN_DONNE Bash
 cd /use/share/nginx/hotml
+```
 Modif index.html 
 ### Arreter
+```
 docker stop ID_RUN 
+```
 ### Supprimer
+```
 docker rm ID_RUN
-
+```
 ## Serveur Nginx
 
 ```
@@ -53,16 +61,23 @@ docker run -d -p 8080:80 nginx # -p : utilisation des ports
 En allant sur http://127.0.0.1.8080 page défaut de nginx
 
 ## Récupérer une image sans la lancer 
+```
 docker pull nom
-
+```
 ## Afficher l'ensemble container existant 
+```
 docker PS
-Afficher l'ensemble des  images 
+```
+## Afficher l'ensemble des  images 
+```
 docker images -a
+```
 
 ## Nettoyer système 
 *après bcp tests par exemple (ensemble conteneur, réseau, images, cache suppr)*
+```
 docker system prune
+```
 
 ## Créer sa propre image
 
@@ -73,6 +88,7 @@ Une instruction = un layer = une étape construction de l'image
 
 ### Dockerfile
 Créer fichier "Dockerfile" 
+```
 FROM debian:9						//Modèle, Image de base
 RUN apt-get update -yq \
 && apt-get install curl gnupg -yq \
@@ -85,38 +101,47 @@ RUN npm install					//ici installer Node.js
 EXPOSE 2368  						//indique port
 VOLUME /app/logs    		//indique fichier à partager
 CMD npm run start				//commande executer démarrage
+```
 
 ### Git
 Créer fichier .dockerignore à côté Dockerfile avec
+```
 node_modules
 .git
+```
 
 ### Construire
+```
 docker build -t ocr-docker-build .           //. car Dockerfile à la racine
 docker run -d -p 2368:2368 ocr-docker-build  //accessible http://127.0.0.1:2368
+```
 
 ## Créer image DockerHub
 Aller sur  https://hub.docker.com/ et se co
 Create Repository saisir nom+description
-
+```
 docker tag nom:latest ocr/nom:latest                // créer un lien
 ou ➜ docker tag id_du_conteneur lieu/nom:latest    //l'id se  trouver avec docker build
 docker push YOUR_USERNAME/nom:latest                //envoyer
+```
 
 ## Docker compose
 --> gestion infrastructure, déployer ensemble composant dans conteneurs 
 Installation sur Linux sinon inclus 
 
 ### Utiliser stack docker compose
+```
 docker-compose up -d vous permettra de démarrer l'ensemble des conteneurs en arrière-plan ;
 docker-compose ps vous permettra de voir le status de l'ensemble de votre stack ;
 docker-compose logs -f --tail 5 vous permettra d'afficher les logs de votre stack ;
 docker-compose stop vous permettra d'arrêter l'ensemble des services d'une stack ;
 docker-compose down vous permettra de détruire l'ensemble des ressources d'une stack ;
 docker-compose config vous permettra de valider la syntaxe de votre fichier docker-compose.yml.
+```
 
 ### Créer docker-compose.yml
 Dedans exemple-->
+```
 version: '3'
 services:
   db:
@@ -145,8 +170,10 @@ services:
 
 volumes:
   db_data: {}
-  
+```
 Lancer:
+```
 docker-compose up -d
+```
 Résutat:
 http://127.0.0.1:8000
