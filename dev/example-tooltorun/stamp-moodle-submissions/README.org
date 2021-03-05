@@ -1,0 +1,29 @@
+#+TITLE: Stamp assignment submissions
+
+These scripts can be used to batch process all files submitted in a
+Moodle assignment resource, so as to convert files to PDF, and add a
+header containing the name of the student and its number in Moodle.
+
+The tools operate in the following process :
+
+1. download the =.zip= archive which contains all submissions
+
+2. unzip the contents. This should create as many subdirs as
+   submissions received, named like ='Anne ONYMOUS_12345_assignsubmission_file_/'=
+
+3. cd to the main repository containing all these extracted subdirs,
+   and launch the script:
+
+   #+BEGIN_SRC sh
+     ~/[...]/stamp-assignement-submissions/stamp-submissions.sh
+   #+END_SRC
+
+   This will produce stamped PDF files for each submission, named like
+   the subdir: ='Anne_ONYMOUS_12345-stamped.pdf'=
+
+4. join all these stamped files into one single PDF file:
+
+   #+BEGIN_SRC 
+   ~/[...]/stamp-assignement-submissions/join-stamped-pdf.sh
+   #+END_SRC
+
