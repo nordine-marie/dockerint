@@ -102,6 +102,24 @@ EXPOSE 2368  						//indique port
 VOLUME /app/logs    		//indique fichier à partager
 CMD npm run start				//commande executer démarrage
 ```
+**Fonctionnement commande CMD et ENTRYPOINT:**
+```
+CMD ["/bin/service", "-d"]
+ENTRYPOINT ["/bin/chamber", "exec", "production", "--"]
+```
+*Alors les arguments par défaut du conteneur seront ["/bin/chamber","exec", "production", "--","/bin/service", "-d"]
+*Ils sont auto-converti en liste.
+
+ATTENTION: Ils peuvent tous deux être des listes, et ENTRYPOINT peut être une liste et CMD peut être une chaîne de caractères; mais si ENTRYPOINT est une chaîne de caractères, CMD sera ignoré --> Toujours faire des listes.
+
+*CMD par defaut: Si on lance Docker run projet avec des arguments, ceux-ci écrasent et remplacent ceux de CMD.
+*ENTRYPOINT: Les arguments peuvent aussi écraser ceux de ENTRYPOINT si on a ajouté --entrypoint
+
+Format:
+   ```
+   docker run --entrypoint argu projet argu
+   ```
+En général utiliser ENTRYPOINT
 
 ### Git
 Créer fichier .dockerignore à côté Dockerfile avec
@@ -177,3 +195,30 @@ docker-compose up -d
 ```
 Résutat:
 http://127.0.0.1:8000
+
+**Fonctionnement commande VOLUME:**
+Lorsqu'on surpprime un conteneur tous les éléments créé,modifié sont supprimé. On utilise les volumes pour la persistance des données. Un volume n'augmente pas la taille des conteneurs qui l'utilisent et son contenu existe en dehors du cycle de vie d'un conteneur donné.
+```
+## Créer une volume
+docker volume create <VOLUME NAME>
+docker run -ti --name vtest_c -v data-test:/data vtest   //Créer au démarrage -v
+
+# Lister les volumes
+docker volume ls
+
+## Supprimer un ou plusieurs volume(s)
+docker volume rm <VOLUME NAME>
+    -f ou --force : forcer la suppression
+
+## Récolter des informations sur une volume
+docker volume inspect <VOLUME NAME>
+
+## Supprimer tous les volumes locaux non inutilisés
+docker volume prune
+    -f ou --force : forcer la suppression
+
+## Supprimer un conteneur Docker avec le/les volumes associés
+docker rm -v <CONTAINER_ID ou CONTAINER_NAME>
+    -f ou --force : forcer la suppression
+    -v ou --volume : supprime les volumes associés au conteneur
+```
