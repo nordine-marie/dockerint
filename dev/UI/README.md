@@ -1,14 +1,14 @@
-Description of the contents of that directory
+##UI FOLDER README 
 
-This directory contains sources for the front-end Web UI.
-
-The UI can be previewed with any Web server providing the contents over HTTP.
-
-For instance, with :
+### Build the Dockerfile
 ```
-php -S localhost:8000
+docker build -t dockerint_web_ui .
+```
+### Run the UI web server container
+
+```
+docker run -it --rm -d -p 8080:80 --name web dockerint_web_ui
 ```
 
-The UI would then be available over http://localhost:8000/
+The UI would then be available over [**http://localhost:8080/**](http://localhost:8080/)
 
-Real deployment would of course require a real Web server (TBD).
