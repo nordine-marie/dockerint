@@ -27,6 +27,20 @@
 
 ### Police d'écriture
 
+Utilisation de la police Rubik.
+
 ### Couleur 
 
-### Logos ?
+* Titre: #1794f0
+
+Justification: Bleu rappelle le logo + Docker. Contraste avec le orange de Moodle.
+
+### Logos 
+
+Logo Dockerint
+
+![Docker](https://user-images.githubusercontent.com/74530367/118457909-8555bd00-b6fa-11eb-8a64-f0e7c2bba13f.PNG)
+
+Couleur: #1694f0
+
+
