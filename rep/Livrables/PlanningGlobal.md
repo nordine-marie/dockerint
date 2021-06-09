@@ -32,7 +32,7 @@ Du 24/01 au 09/06
 ||Figma| 01/02 - 03/02 |
 ||Recherches web processing| 01/02 - 09/02 |
 ||Go-Docker| 10/02 - 21/02 |
-|**Interface Utilisateur **||**22/02 - 12/03**|
+|**Interface Utilisateur**||**22/02 - 12/03**|
 ||Charte Graphique - Analyse Moodle|22/02 - 24/02|
 ||Charte Graphique - Choix couleurs, police|23/02 - 25/02|
 ||Charte Graphique - Création logo|25/02 - 29/02|
@@ -42,5 +42,10 @@ Du 24/01 au 09/06
 ||Intégration web - Intégration HTML/CSS|05/03 - 10/03|
 ||Intégration web - Responsivness JS/AngularJS|08/03 - 12/03|
 ||Tests|13/03 - 15/03|
-|**Serveur**||**1 mois**|
-||Pas encore défini||
+|**Serveur**||**16/03 - 30/05**|
+||Go-Docker|16/03 - 30/05|
+||Intégration scripts pré-définis|16/03 - 30/05|
+||Shibboleth|16/03 - 30/05|
+||Import/Export de fichiers|16/03 - 30/05|
+||Connection front et back|16/03 - 30/05|
+||Tests|16/03 - 30/05|
