@@ -52,8 +52,8 @@ Du 24/01 au 09/06
 ||Go-Docker : Problème Docker-Compose |16/04 - 31/04|
 ||Go-Docker : Prise de contact avec créateur |16/03 - 3/05|
 ||Go-Docker : Vagrant |16/03 - 30/05|
-||Intégration scripts pré-définis|16/03 - 30/05|
-||Shibboleth|16/03 - 30/05|
-||Import/Export de fichiers|16/03 - 30/05|
-||Connection front et back|16/03 - 30/05|
-||Tests|16/03 - 30/05|
+||Intégration scripts pré-définis||
+||Shibboleth|16/04 - 30/05|
+||Import/Export de fichiers||
+||Connection front et back||
+||Tests||
